@@ -5,7 +5,13 @@
 export const environment = {
   production: false,
   URLStel: 'http://app.stelorder.com/app/', 
-  URLContab: 'http://rest.contabilium.com/api/'
+  URLContab: 'http://rest.contabilium.com/',
+  APIKEY: 'ilb2NhAwMoAW39GJ1f1ln9dnxjTwFWH6YgXiMbpn',
+  accept: 'application/json; charset=utf-8',
+  client_id: 'soporte@qumax.com.ar',
+  client_secret: 'Qumax1234',
+  grant_type: '{{credentials}}'
+  
 };
 
 /*
