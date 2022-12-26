@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
-import { ResponseI } from 'src/app/interface/reponse.interface';
-import { ProducContb } from 'src/app/model/producContb';
+import { CookieService } from 'ngx-cookie-service';
 import { ProducContbService } from 'src/app/service/producContb.service';
+import { TokenService } from 'src/app/service/token.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -10,15 +12,22 @@ import { ProducContbService } from 'src/app/service/producContb.service';
 })
 export class DashboardComponent implements OnInit {
 
-  proc: any = [];
+  
   
 
-  constructor(private producContbService: ProducContbService) { }
+  constructor(private token: TokenService, cookies: CookieService) {
+    
+  }
 
   ngOnInit(): void {
-
-    console.log(this.producContbService.login(this.proc).subscribe(data => this.proc));
+    
   }
+
+cagarToken() {
+  this.token.onToken().subscribe(token => {
+     
+  })
+}
 
  
   
