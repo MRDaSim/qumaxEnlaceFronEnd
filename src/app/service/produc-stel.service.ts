@@ -19,7 +19,7 @@ export class ProducStelService {
   httpOptions = {
     headers: new HttpHeaders ({
       'Content-Type': 'application/json; charset=utf-8',
-      'APIKEY': 'ilb2NhAwMoAW39GJ1f1ln9dnxjTwFWH6YgXiMbpn'
+      'APIKEY': '7KGAvtZouxp9RpqLVn6rcIu856DJEejFUbOalB3Z'
     })
   }
 

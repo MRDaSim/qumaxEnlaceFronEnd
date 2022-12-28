@@ -10,16 +10,13 @@ import { Token } from '../model/token';
 })
 export class TokenService {
 
-  
+  token!: any;
 
-  constructor(private http: HttpClient, cookies: CookieService) { }
+  constructor(private http: HttpClient, private cookies: CookieService) { }
 
+  public onToken() {
 
-  public onToken() : Observable<any> {
-
-    
-
-    let body = new HttpParams();
+    let body = new URLSearchParams();
     body.set('grant_type', 'client_credentials' );
     body.set('client_id', 'soporte@qumax.com.ar');
     body.set('client_secret', 'Qumax1234');
@@ -27,33 +24,30 @@ export class TokenService {
     let options = {
         headers: new HttpHeaders()
         .set('Content-Type', 'application/x-www-form-urlencoded')
-        .set('Access-Control-Allow-Credentials',  'true')
-        .set('Access-Control-Allow-Origin', 'http://localhost:4200')
+        //.set('Access-Control-Allow-Credentials',  'true')
+        //.set('Access-Control-Allow-Origin', '*')
         //.set('Content-Length', '86')
         //.set('Access', '*/*')
         //.set('Accept-Encoding', 'gzip, deflate, br')
         //.set('Access-Control-Allow-Credentials', 'true')
         //.set('Access-Control-Allow-Origin', '*')
         //.set('Connection', 'keep-alive')
-        //.set('User-Agent', 'PostmanRuntime/7.30.0')
+        //.set('User-Agent', '')
         //.set('Host', 'rest.contabilium.com')
         //.set('Content-Length', ' ')
-        //.set('User-Agent', 'PostmanRuntime/7.30.0')
-
-
-        
-
-        
+        //.set('User-Agent', '')  
         
     };
     
-    return this.http.post<any>('http://rest.contabilium.com/'+ 'token', body, options)
+     this.http.post('http://rest.contabilium.com/token', body,  options).subscribe(
+      tok => {
+        this.token = tok;
+        this.cookies.set('token', this.token);
+        console.log(this.token)
 
-      
-      
-    
-  
-  
+      }
+    )
+ 
   }
 
 }

@@ -24,9 +24,7 @@ export class DashboardComponent implements OnInit {
   }
 
 cagarToken() {
-  this.token.onToken().subscribe(token => {
-     
-  })
+  this.token.onToken()
 }
 
  

@@ -11,9 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private token: TokenService) { }
 
   ngOnInit(): void {
-    this.token.onToken().subscribe(token => {
-      this.token = token;
-    })
+    this.token.onToken()
   }
 
 }
