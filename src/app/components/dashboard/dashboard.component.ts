@@ -1,8 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { ProducStel } from 'src/app/model/produc-stel';
+import { ProducStelService } from 'src/app/service/produc-stel.service';
 import { ProducContbService } from 'src/app/service/producContb.service';
-import { TokenService } from 'src/app/service/token.service';
+
 
 
 @Component({
@@ -12,21 +14,29 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class DashboardComponent implements OnInit {
 
-  
-  
+  produc : ProducStel[] = [];
 
-  constructor(private token: TokenService, cookies: CookieService) {
-    
-  }
+  polo! : any;
+  
+  producByReference : ProducStel[] = [];
+
+  constructor(private cookies: CookieService, private producStel: ProducStelService) {}
 
   ngOnInit(): void {
-    
+    //this.getProductos();
+    //this.getProducByReference();
   }
 
-cagarToken() {
-  this.token.onToken()
-}
+//getProductos(): void {
+  //this.producStel.listaProduct().subscribe(data => {this.produc = data;})
+//}
 
- 
+
+// getProducByReference() {
+  
+//    this.producStel.getProductByFullReference()
+   
+
+// }
   
 }

@@ -1,11 +1,11 @@
 <div class="row">
     <div class="container">
         <div class="col-xxl-12 bloque" >
-            <div class="row">
+            <div class="row" *ngFor="let ProducStel of producByReference">
                 
-                    <p>esto es una prueba</p>
+                    <p>Referencia: {{ProducStel.reference}}</p>
                     <p></p>
-                    <p>esto es una prueba</p>
+                    <p>{{ProducStel.reference}</p>
             
             </div>
         </div>

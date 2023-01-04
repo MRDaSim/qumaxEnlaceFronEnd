@@ -24,26 +24,13 @@ export class TokenService {
     let options = {
         headers: new HttpHeaders()
         .set('Content-Type', 'application/x-www-form-urlencoded')
-        //.set('Access-Control-Allow-Credentials',  'true')
-        //.set('Access-Control-Allow-Origin', '*')
-        //.set('Content-Length', '86')
-        //.set('Access', '*/*')
-        //.set('Accept-Encoding', 'gzip, deflate, br')
-        //.set('Access-Control-Allow-Credentials', 'true')
-        //.set('Access-Control-Allow-Origin', '*')
-        //.set('Connection', 'keep-alive')
-        //.set('User-Agent', '')
-        //.set('Host', 'rest.contabilium.com')
-        //.set('Content-Length', ' ')
-        //.set('User-Agent', '')  
-        
     };
     
      this.http.post('http://rest.contabilium.com/token', body,  options).subscribe(
       tok => {
         this.token = tok;
         this.cookies.set('token', this.token);
-        console.log(this.token)
+        console.log(this.token);
 
       }
     )
