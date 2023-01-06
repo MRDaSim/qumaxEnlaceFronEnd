@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.token.onToken()
-    this.proc.getProductByFullReference();
+    //this.proc.getProductByFullReference();
   }
 
 }

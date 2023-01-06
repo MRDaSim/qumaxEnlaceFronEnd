@@ -8,6 +8,7 @@ import { ResponseI } from '../interface/reponse.interface';
 import { CookieService } from 'ngx-cookie-service';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +16,8 @@ export class ProducStelService {
 
   proStel = environment.URLStel + 'products?full-reference=1000';
 
+  polo! : any;
+  
   constructor(private httpClient: HttpClient, private cookies: CookieService) { }
 
   // public listaProduct(): Observable<any> {
@@ -27,27 +30,20 @@ export class ProducStelService {
   //   return this.httpClient.get<any>(this.proStel, httpOptions);
   // }
 
-  polo! : any;
+ 
 
-  public getProductByFullReference() {
+  public getProductByFullReference(){
     
     let options = {
       headers: new HttpHeaders()
-        .set('accept', 'application/json; charset=utf-8')
+        .set('Content-Type', 'application/json; charset=utf-8')
         .set('APIKEY', '7KGAvtZouxp9RpqLVn6rcIu856DJEejFUbOalB3Z')
-         
+       
       
     }
 
-     this.httpClient.get('https://app.stelorder.com/app/products?', options).subscribe(data => {
-      this.polo  = data;
-      this.cookies.set('polo', this.polo)
-      
-      console.log(this.polo);
-    })
+     this.httpClient.get('https://app.stelorder.com/app/products', options)
   }
-
-  
 
 
 

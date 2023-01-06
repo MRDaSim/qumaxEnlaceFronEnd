@@ -14,29 +14,20 @@ import { ProducContbService } from 'src/app/service/producContb.service';
 })
 export class DashboardComponent implements OnInit {
 
-  produc : ProducStel[] = [];
-
-  polo! : any;
-  
-  producByReference : ProducStel[] = [];
+ proc = ProducStel;
 
   constructor(private cookies: CookieService, private producStel: ProducStelService) {}
 
   ngOnInit(): void {
-    //this.getProductos();
-    //this.getProducByReference();
+    this.traerProductos();
   }
 
-//getProductos(): void {
-  //this.producStel.listaProduct().subscribe(data => {this.produc = data;})
-//}
+  traerProductos() {
+    console.log(this.producStel.polo);
+    
+  }
+ 
 
 
-// getProducByReference() {
-  
-//    this.producStel.getProductByFullReference()
-   
-
-// }
-  
 }
+  
