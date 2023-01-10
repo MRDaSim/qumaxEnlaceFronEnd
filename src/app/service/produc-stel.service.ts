@@ -35,11 +35,10 @@ export class ProducStelService {
   public getProductByFullReference(){
     
     let options = {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json; charset=utf-8')
-        .set('APIKEY', '7KGAvtZouxp9RpqLVn6rcIu856DJEejFUbOalB3Z')
-       
-      
+      headers: new HttpHeaders() 
+        .set('Content-Type' , 'application/json; charset=utf-8')
+        .set('APIKEY' , '7KGAvtZouxp9RpqLVn6rcIu856DJEejFUbOalB3Z')
+           
     }
 
      this.httpClient.get('https://app.stelorder.com/app/products', options)
